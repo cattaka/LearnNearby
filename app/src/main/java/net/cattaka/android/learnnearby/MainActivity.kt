@@ -8,15 +8,12 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.CompoundButton
 import com.google.android.gms.nearby.Nearby
 import com.google.android.gms.nearby.messages.*
-import com.google.android.gms.nearby.messages.MessageFilter
 import net.cattaka.android.learnnearby.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity(), CompoundButton.OnCheckedChangeListener {
-    val MY_EDDYSTONE_UID_NAMESPACE = "01020304050607080910"
-    val mMessageFilter = MessageFilter.Builder()
-            .includeEddystoneUids(MY_EDDYSTONE_UID_NAMESPACE, null /* any instance */)
-            .build()
+    lateinit var mEddystoneUidNamespace: String
+    lateinit var mMessageFilter: MessageFilter
     val mMessageListenerForBle: MessageListener = object : MessageListener() {
         override fun onFound(message: Message) {
             super.onFound(message)
@@ -51,7 +48,7 @@ class MainActivity : AppCompatActivity(), CompoundButton.OnCheckedChangeListener
         }
     }
 
-    val mMessage = Message(Build.DEVICE.toByteArray())
+    val mMessage = Message(Build.DEVICE.toByteArray(), Message.MESSAGE_TYPE_EDDYSTONE_UID)
     lateinit var mBinding: ActivityMainBinding
     lateinit var mMessagesClient: MessagesClient;
     var mIsPublishing: Boolean = false
@@ -59,6 +56,11 @@ class MainActivity : AppCompatActivity(), CompoundButton.OnCheckedChangeListener
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        mEddystoneUidNamespace = getString(R.string.eddystone_uid_namespace)
+        mMessageFilter = MessageFilter.Builder()
+                .includeEddystoneUids(mEddystoneUidNamespace, null /* any instance */)
+                .build()
+
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         mBinding.activity = this
 
