@@ -8,10 +8,10 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.CompoundButton
 import com.google.android.gms.nearby.Nearby
 import com.google.android.gms.nearby.messages.*
-import net.cattaka.android.learnnearby.databinding.ActivityMainBinding
+import net.cattaka.android.learnnearby.databinding.ActivitySimpleListenerBinding
 
 
-class MainActivity : AppCompatActivity(), CompoundButton.OnCheckedChangeListener {
+class SimpleListenerActivity : AppCompatActivity(), CompoundButton.OnCheckedChangeListener {
     lateinit var mEddystoneUidNamespace: String
     lateinit var mMessageFilter: MessageFilter
     val mMessageListenerForBle: MessageListener = object : MessageListener() {
@@ -49,8 +49,8 @@ class MainActivity : AppCompatActivity(), CompoundButton.OnCheckedChangeListener
     }
 
     val mMessage = Message(Build.DEVICE.toByteArray(), Message.MESSAGE_TYPE_EDDYSTONE_UID)
-    lateinit var mBinding: ActivityMainBinding
-    lateinit var mMessagesClient: MessagesClient;
+    lateinit var mBinding: ActivitySimpleListenerBinding
+    lateinit var mMessagesClient: MessagesClient
     var mIsPublishing: Boolean = false
     var mIsSubscribe: Boolean = false
 
@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity(), CompoundButton.OnCheckedChangeListener
                 .includeEddystoneUids(mEddystoneUidNamespace, null /* any instance */)
                 .build()
 
-        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_simple_listener)
         mBinding.activity = this
 
         mMessagesClient = Nearby.getMessagesClient(this);

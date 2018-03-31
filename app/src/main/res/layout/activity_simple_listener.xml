@@ -7,13 +7,13 @@
 
         <variable
             name="activity"
-            type="net.cattaka.android.learnnearby.MainActivity" />
+            type="net.cattaka.android.learnnearby.SimpleListenerActivity" />
     </data>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="net.cattaka.android.learnnearby.MainActivity">
+        tools:context="net.cattaka.android.learnnearby.SimpleListenerActivity">
 
         <ScrollView
             android:layout_width="0dp"
