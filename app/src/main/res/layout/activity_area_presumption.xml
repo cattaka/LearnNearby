@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="net.cattaka.android.learnnearby.AreaPresumptionActivity" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            style="?android:textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/space_0.5"
+            android:tag="ESS_TAG_1_1"
+            android:text="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="?android:textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/space_0.5"
+            android:tag="ESS_TAG_1_2"
+            android:text="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="?android:textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/space_0.5"
+            android:tag="ESS_TAG_1_3"
+            android:text="3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            style="?android:textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/space_0.5"
+            android:tag="ESS_TAG_1_4"
+            android:text="4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            style="?android:textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/space_0.5"
+            android:tag="ESS_TAG_1_5"
+            android:text="5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/view_marker"
+            style="?android:textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🚶"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_marginStart="100dp"
+            tools:layout_marginTop="100dp"
+            />
+    </android.support.constraint.ConstraintLayout>
+</layout>
