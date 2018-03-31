@@ -15,8 +15,8 @@ data class EddyStoneSignature(val eventId: Int, val beaconId: Int) {
 fun Message.toEddyStoneSignature(): EddyStoneSignature {
     val bs = this.content
     if (bs.size >= 6) {
-        val eventId = (bs[3].toInt() shl 24) or (bs[2].toInt() shl 16) or (bs[1].toInt() shl 8) or (bs[0].toInt())
-        val beaconId = (bs[5].toInt() shl 8) or (bs[4].toInt())
+        val eventId = (bs[13].toInt() shl 24) or (bs[12].toInt() shl 16) or (bs[11].toInt() shl 8) or (bs[10].toInt())
+        val beaconId = (bs[15].toInt() shl 8) or (bs[14].toInt())
         return EddyStoneSignature(eventId, beaconId)
     } else {
         // error case

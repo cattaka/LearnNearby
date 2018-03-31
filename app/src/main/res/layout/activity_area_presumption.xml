@@ -16,6 +16,7 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/ess_tag_1_1"
             style="?android:textAppearanceLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,6 +27,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/ess_tag_1_2"
             style="?android:textAppearanceLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,6 +38,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/ess_tag_1_3"
             style="?android:textAppearanceLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -46,6 +49,7 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
+            android:id="@+id/ess_tag_1_4"
             style="?android:textAppearanceLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -56,6 +60,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
+            android:id="@+id/ess_tag_1_5"
             style="?android:textAppearanceLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -66,6 +71,47 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="ESS_TAG_1_1_DISTANCE"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ess_tag_1_1"
+            tools:text="123m" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="ESS_TAG_1_2_DISTANCE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ess_tag_1_2"
+            tools:text="123m" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="ESS_TAG_1_3_DISTANCE"
+            app:layout_constraintBottom_toTopOf="@+id/ess_tag_1_3"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="123m" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="ESS_TAG_1_4_DISTANCE"
+            app:layout_constraintBottom_toTopOf="@+id/ess_tag_1_4"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="123m" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="ESS_TAG_1_5_DISTANCE"
+            app:layout_constraintEnd_toEndOf="@+id/ess_tag_1_5"
+            app:layout_constraintStart_toStartOf="@+id/ess_tag_1_5"
+            app:layout_constraintTop_toBottomOf="@+id/ess_tag_1_5"
+            tools:text="123m" />
 
         <TextView
             android:id="@+id/view_marker"

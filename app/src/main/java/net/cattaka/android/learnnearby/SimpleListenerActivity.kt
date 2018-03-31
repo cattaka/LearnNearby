@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.CompoundButton
 import com.google.android.gms.nearby.Nearby
 import com.google.android.gms.nearby.messages.*
+import net.cattaka.android.learnnearby.data.toEddyStoneSignature
 import net.cattaka.android.learnnearby.databinding.ActivitySimpleListenerBinding
 
 
@@ -17,34 +18,34 @@ class SimpleListenerActivity : AppCompatActivity(), CompoundButton.OnCheckedChan
     val mMessageListenerForBle: MessageListener = object : MessageListener() {
         override fun onFound(message: Message) {
             super.onFound(message)
-            writeLog("onFound: " + message.content.toString(Charsets.UTF_8));
+            writeLog("found: " + message.toEddyStoneSignature().toTagString());
         }
 
         override fun onLost(message: Message) {
             super.onLost(message)
-            writeLog("onLost: " + message.content.toString(Charsets.UTF_8));
+            writeLog("lost: " + message.toEddyStoneSignature().toTagString());
         }
 
         override fun onDistanceChanged(message: Message, distance: Distance) {
             super.onDistanceChanged(message, distance)
-            writeLog("onDistanceChanged: " + message.content.toString(Charsets.UTF_8) + " : " + distance);
+            writeLog("distance: " + message.toEddyStoneSignature().toTagString() + " : " + distance);
         }
 
         override fun onBleSignalChanged(message: Message, bleSignal: BleSignal) {
             super.onBleSignalChanged(message, bleSignal)
-            writeLog("onBleSignalChanged" +
-                    ": " + message.content.toString(Charsets.UTF_8) + " : " + bleSignal);
+            writeLog("signal" +
+                    ": " + message.toEddyStoneSignature().toTagString() + " : " + bleSignal);
         }
     }
     val mMessageListener: MessageListener = object : MessageListener() {
         override fun onFound(message: Message) {
             super.onFound(message)
-            writeLog("onFound: " + message.content.toString(Charsets.UTF_8));
+            writeLog("found: " + message.content.toString(Charsets.UTF_8));
         }
 
         override fun onLost(message: Message) {
             super.onLost(message)
-            writeLog("onLost: " + message.content.toString(Charsets.UTF_8));
+            writeLog("lost: " + message.content.toString(Charsets.UTF_8));
         }
     }
 
@@ -64,7 +65,7 @@ class SimpleListenerActivity : AppCompatActivity(), CompoundButton.OnCheckedChan
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_simple_listener)
         mBinding.activity = this
 
-        mMessagesClient = Nearby.getMessagesClient(this);
+        mMessagesClient = Nearby.getMessagesClient(this)
     }
 
     override fun onStart() {
